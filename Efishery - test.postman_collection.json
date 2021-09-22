@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "004a3261-10d5-4022-8f0b-b5e6d9e38f36",
+		"name": "Efishery - test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth - register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"ulwisibaq\",\n    \"phone\": \"081221476484\",\n    \"Role\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth - login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MTk1ODMwNzksImlhdCI6MTYxODk3ODI3OSwiaXNzIjoiV1AtT0FVVEgiLCJFbWFpbCI6IndwMzEzMTcxMTI2MDBAd2FydW5ncGludGFyLmJpeiIsIlVzZXJJRCI6MTExMTYsIkV4dElEIjoiV1AzMTMxNzExMjYwMCIsIk5hbWUiOiJSZXphIFNFVCAxIiwiUGljdHVyZSI6IiIsIlBlcm1pc3Npb25zIjpudWxsLCJQcmVmaXgiOiJhd3AifQ.aqWZWiaJOh5tFkjg-EO0kKHO8BELykuloazglfLerlc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phone\":\"081221476482\",\n    \"password\":\"1111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth - verify",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzIzMjI1NjIsImlhdCI6MTYzMjMyMDc2MiwiaXNzIjoiZWZpc2hlcnkiLCJuYW1lIjoidWx3aSIsInBob25lIjoiMDgxMjIxNDc2NDgyIiwicm9sZSI6ImFkbWluIiwiY3JlYXRlZF9hdCI6IjIwMjEtMDktMjFUMTU6NDA6NDhaIn0.YsJ28CQ4Yb_eecmPDkWfhsnwwK6VYhgs7fi4ZMCFv80",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/user/verify",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch - commodity",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzIyNDU3NzUsImlhdCI6MTYzMjI0Mzk3NSwiaXNzIjoiZWZpc2hlcnkiLCJuYW1lIjoidWx3aSIsInBob25lIjoiMDgxMjIxNDc2NDgyIiwicm9sZSI6ImFkbWluIiwiY3JlYXRlZF9hdCI6IjIwMjEtMDktMjFUMTU6NDA6NDhaIn0.A2R_OjMhWftPdkDRKvjgJS2tfMV6bPb4NLr5vtQvCN0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/commodity/fetch",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"commodity",
+						"fetch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch - verify",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzIzMjI1NjIsImlhdCI6MTYzMjMyMDc2MiwiaXNzIjoiZWZpc2hlcnkiLCJuYW1lIjoidWx3aSIsInBob25lIjoiMDgxMjIxNDc2NDgyIiwicm9sZSI6ImFkbWluIiwiY3JlYXRlZF9hdCI6IjIwMjEtMDktMjFUMTU6NDA6NDhaIn0.YsJ28CQ4Yb_eecmPDkWfhsnwwK6VYhgs7fi4ZMCFv80",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/commodity/verify",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"commodity",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
