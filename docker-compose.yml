@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+    
+
+    db:
+        image: mysql
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test_db
+        ports:
+          - "3309:3306"
+        volumes:
+          - ./efishery/auth.sql:/auth.sql
+
+volumes:
+    data01:
+        driver: local
